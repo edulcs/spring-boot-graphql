@@ -1,0 +1,30 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        use_sql_comments: true
+  profiles:
+    active: '@spring.profiles.active@'
+
+graphql:
+  servlet:
+    contextSetting: PER_REQUEST_WITH_INSTRUMENTATION
+    enabled: true
+    exception-handlers-enabled: true
+    mapping: /graphql
+
+graphiql:
+  enabled: true
+  endpoint:
+    graphql: /graphql
+  mapping: /graphiql
+  pageTitle: GraphiQL
+  props:
+    resources:
+      defaultQuery: schema.graphqls
+    variables:
+      editorTheme: '"solarized light"'
+  static:
+    basePath: /
